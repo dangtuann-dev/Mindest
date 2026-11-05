@@ -137,7 +137,7 @@ export function MindsetCardButton({ code }: { code: keyof typeof ARCHETYPE_BY_CO
       context.textAlign = "left";
       context.fillStyle = "#8A7E71";
       context.font = `500 22px ${family}`;
-      context.fillText("tổ ấm cho tâm trí", 72, 1020);
+      context.fillText("thấu hiểu tâm trí", 72, 1020);
       context.textAlign = "right";
       context.fillText("Câu trả lời của bạn không rời khỏi thiết bị này.", 1008, 1020);
 

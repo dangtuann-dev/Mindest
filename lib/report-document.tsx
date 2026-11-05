@@ -275,7 +275,7 @@ export function ReportDocument({
             Nếu bạn đang thấy không an toàn, hãy gọi 111.
           </Text>
           <View style={styles.footerRow}>
-            <Text>Mindest · tổ ấm cho tâm trí</Text>
+            <Text>Mindest · thấu hiểu tâm trí</Text>
             <Text
               render={({ pageNumber, totalPages }) =>
                 `Trang ${pageNumber} / ${totalPages}`

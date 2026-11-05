@@ -16,7 +16,7 @@ const beVietnam = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mindest – Tổ ấm cho tâm trí",
+    default: "Mindest – Thấu hiểu tâm trí",
     template: "%s · Mindest",
   },
   description:
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     siteName: "Mindest",
-    title: "Mindest – Tổ ấm cho tâm trí",
+    title: "Mindest – Thấu hiểu tâm trí",
     description:
       "Hiểu cách bạn phản ứng với áp lực, nhận một chân dung tâm lý và những lời khuyên nhẹ nhàng, cụ thể. Không lưu dữ liệu, không phán xét.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mindest – Tổ ấm cho tâm trí",
+    title: "Mindest – Thấu hiểu tâm trí",
     description:
       "Hiểu cách bạn phản ứng với áp lực, nhận một chân dung tâm lý và những lời khuyên nhẹ nhàng, cụ thể.",
   },

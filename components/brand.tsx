@@ -49,7 +49,7 @@ export function Brand({
         <span className="text-[1.13rem] font-bold tracking-[-0.05em]">Mindest</span>
         {withTagline ? (
           <span className="mt-1.5 text-[0.6rem] font-medium uppercase tracking-[0.17em] text-ink-faint dark:text-cream-200/55">
-            tổ ấm cho tâm trí
+            thấu hiểu tâm trí
           </span>
         ) : null}
       </span>

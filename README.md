@@ -1,4 +1,4 @@
-# Mindest – tổ ấm cho tâm trí
+# Mindest – thấu hiểu tâm trí
 
 Mindest là web app tiếng Việt giúp người trẻ 12–22 tuổi nhận diện **phong cách ứng phó với áp lực** qua 100 câu hỏi, rồi nhận một trong **16 nhân cách** với avatar riêng, mô tả chi tiết, lời khuyên sơ cứu cảm xúc, thói quen 7 ngày và báo cáo PDF.
 
