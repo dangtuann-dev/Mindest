@@ -1,0 +1,42 @@
+diff --git a/node_modules/fontkit/dist/browser-module.mjs b/node_modules/fontkit/dist/browser-module.mjs
+index 4d0a389..5ce6db9 100644
+--- a/node_modules/fontkit/dist/browser-module.mjs
++++ b/node_modules/fontkit/dist/browser-module.mjs
+@@ -12668,6 +12668,9 @@ class $4c1709dee528ea76$export$2e2bcd8739ae039 {
+    * @param {number[]} characters
+    * @return {Glyph}
+    */ getGlyph(glyph, characters = []) {
++        if (characters.length > 0 && this._glyphs[glyph] && this._glyphs[glyph].codePoints.length === 0) {
++            this._glyphs[glyph] = null;
++        }
+         if (!this._glyphs[glyph]) {
+             if (this.directory.tables.sbix) this._glyphs[glyph] = new (0, $25d8f049c222084c$export$2e2bcd8739ae039)(glyph, characters, this);
+             else if (this.directory.tables.COLR && this.directory.tables.CPAL) this._glyphs[glyph] = new (0, $0d411f0165859681$export$2e2bcd8739ae039)(glyph, characters, this);
+diff --git a/node_modules/fontkit/dist/browser.cjs b/node_modules/fontkit/dist/browser.cjs
+index a5fa901..aa1c09b 100644
+--- a/node_modules/fontkit/dist/browser.cjs
++++ b/node_modules/fontkit/dist/browser.cjs
+@@ -12685,6 +12685,9 @@ class $0a8ef2660a6ce4b6$export$2e2bcd8739ae039 {
+    * @param {number[]} characters
+    * @return {Glyph}
+    */ getGlyph(glyph, characters = []) {
++        if (characters.length > 0 && this._glyphs[glyph] && this._glyphs[glyph].codePoints.length === 0) {
++            this._glyphs[glyph] = null;
++        }
+         if (!this._glyphs[glyph]) {
+             if (this.directory.tables.sbix) this._glyphs[glyph] = new (0, $55855d6d316b015e$export$2e2bcd8739ae039)(glyph, characters, this);
+             else if (this.directory.tables.COLR && this.directory.tables.CPAL) this._glyphs[glyph] = new (0, $42d9dbd2de9ee2d8$export$2e2bcd8739ae039)(glyph, characters, this);
+diff --git a/node_modules/fontkit/dist/main.cjs b/node_modules/fontkit/dist/main.cjs
+index 851b2d2..70a912d 100644
+--- a/node_modules/fontkit/dist/main.cjs
++++ b/node_modules/fontkit/dist/main.cjs
+@@ -12706,6 +12706,9 @@ class $0a8ef2660a6ce4b6$export$2e2bcd8739ae039 {
+    * @param {number[]} characters
+    * @return {Glyph}
+    */ getGlyph(glyph, characters = []) {
++        if (characters.length > 0 && this._glyphs[glyph] && this._glyphs[glyph].codePoints.length === 0) {
++            this._glyphs[glyph] = null;
++        }
+         if (!this._glyphs[glyph]) {
+             if (this.directory.tables.sbix) this._glyphs[glyph] = new (0, $55855d6d316b015e$export$2e2bcd8739ae039)(glyph, characters, this);
+             else if (this.directory.tables.COLR && this.directory.tables.CPAL) this._glyphs[glyph] = new (0, $42d9dbd2de9ee2d8$export$2e2bcd8739ae039)(glyph, characters, this);
