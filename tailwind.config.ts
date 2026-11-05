@@ -8,7 +8,7 @@ const config: Config = {
     "./lib/**/*.{ts,tsx}",
     "./config/**/*.{ts,tsx}",
   ],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
