@@ -59,10 +59,7 @@ Mở http://localhost:3000.
    ```
 
 2. Vào [vercel.com/new](https://vercel.com/new), chọn **Import Git Repository** và chọn repo vừa push.
-3. Giữ nguyên cấu hình mặc định:
-   - Framework Preset: **Next.js**
-   - Build Command: `npm run build`
-   - Output Directory: để trống (Vercel nhận `out/` từ `output: "export"`)
+3. Giữ nguyên cấu hình mặc định; `vercel.json` đã chỉ định build `npm run build` và phục vụ thư mục `out/` của bản static export.
    - Environment Variables: không cần
 4. Bấm **Deploy**. Mỗi lần push lên `main`, Vercel tự build lại.
 
