@@ -59,8 +59,15 @@ const styles = StyleSheet.create({
     fontSize: 6.4,
     color: faint,
   },
-  title: { fontSize: 22, fontWeight: "bold", letterSpacing: -0.6, color: ink },
-  subtitle: { marginTop: 3, fontSize: 8.5, color: faint },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    letterSpacing: -0.6,
+    color: ink,
+    lineHeight: 1.3,
+    marginBottom: 10,
+  },
+  subtitle: { fontSize: 8.5, lineHeight: 1.5, color: faint },
   hero: {
     marginTop: 14,
     borderRadius: 18,
@@ -91,8 +98,15 @@ const styles = StyleSheet.create({
     letterSpacing: 1.6,
     color: paper,
   },
-  name: { marginTop: 7, fontSize: 20, fontWeight: "bold", letterSpacing: -0.4 },
-  slogan: { marginTop: 4, fontSize: 9, color: soft },
+  name: {
+    marginTop: 7,
+    marginBottom: 8,
+    fontSize: 20,
+    fontWeight: "bold",
+    letterSpacing: -0.4,
+    lineHeight: 1.35,
+  },
+  slogan: { fontSize: 9, lineHeight: 1.55, color: soft },
   heroMeta: { marginTop: 8, fontSize: 7.4, color: faint },
   section: { marginTop: 16 },
   sectionTitle: {
@@ -199,9 +213,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
+    backgroundColor: "#365033",
   },
-  hotlineText: { fontSize: 8.2, fontWeight: "bold", color: paper },
-  hotlineNote: { fontSize: 7.4, color: soft, flex: 1 },
+  hotlineText: { fontSize: 8.2, fontWeight: "bold", color: cream },
+  hotlineNote: { fontSize: 7.4, lineHeight: 1.4, color: "#E9D8C0", flex: 1 },
   spacer: { height: 4 },
 });
 
@@ -385,7 +400,7 @@ export function ReportDocument({
             ngày nặng kéo dài khiến việc ăn, ngủ, học tập bị ảnh hưởng — hãy nói với một
             người lớn đáng tin: bố mẹ, thầy cô, người thân, hoặc một người bạn lớn tuổi.
           </Text>
-          <View style={[styles.hotline, { backgroundColor: color }]}>
+          <View style={styles.hotline}>
             <Text style={styles.hotlineText}>Gọi 111</Text>
             <Text style={styles.hotlineNote}>
               Tổng đài quốc gia bảo vệ trẻ em · hoạt động 24/7
