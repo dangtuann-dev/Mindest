@@ -114,7 +114,7 @@ export default function PrivacyPage() {
             <p className="mt-2 text-[0.86rem] leading-relaxed text-ink-soft dark:text-cream-200/65">
               Bạn có thể xem trước màn hình đồng ý trước khi trả lời bất kỳ câu nào.
             </p>
-            <Link href="/bat-dau" className="btn-primary mt-4 gap-2">
+            <Link href="/" className="btn-primary mt-4 gap-2">
               Đi đến phần giới thiệu
               <ArrowRight size={17} />
             </Link>

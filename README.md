@@ -77,8 +77,9 @@ npm run start
 
 ```text
 app/
-  page.tsx                  Trang chủ
-  bat-dau/page.tsx          Disclaimer, nhóm tuổi, chọn bản test, đồng ý
+  page.tsx                  Trang bắt đầu (mặc định khi mở web)
+  trang-chu/page.tsx        Landing page, mở khi bấm logo
+  bat-dau/page.tsx          Bí danh của trang bắt đầu (giữ cho liên kết cũ)
   lam-bai/page.tsx          Làm bài (client)
   ket-qua/page.tsx          Kết quả cá nhân (client, đọc sessionStorage)
   nhan-cach/page.tsx        Thư viện 16 nhân cách
@@ -139,7 +140,7 @@ public/fonts/               Be Vietnam Pro (TTF) cho web và PDF
 - Chỉ có một bản làm bài 100 câu; không còn lựa chọn bản rút gọn.
 - Thời gian làm bài được tính từ lúc bắt đầu ở `/lam-bai` đến lúc bấm xem kết quả; ngưỡng “quá nhanh” là dưới 4 phút.
 - PDF dùng font TTF nhúng và avatar được chuyển từ SVG sang PNG bằng canvas trước khi nhúng.
-- Nút “Làm lại” đưa về `/bat-dau`; dữ liệu cũ vẫn nằm trong tab cho đến khi bắt đầu lượt mới hoặc bấm xóa.
+- Nút “Làm lại” đưa về `/`; dữ liệu cũ vẫn nằm trong tab cho đến khi bắt đầu lượt mới hoặc bấm xóa.
 - Không có trang liên hệ/đối tác ở bản này; `config/partners.ts` là chỗ cắm đối tác hỗ trợ trong giai đoạn sau.
 
 ## Lưu ý pháp lý

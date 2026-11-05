@@ -30,7 +30,7 @@ export function BrandMark({ className }: { className?: string }) {
 }
 
 export function Brand({
-  href = "/",
+  href = "/trang-chu",
   withTagline = true,
   className,
 }: {

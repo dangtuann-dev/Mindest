@@ -95,7 +95,7 @@ function ArchetypeDetail({ archetype }: { archetype: Archetype }) {
                   “{archetype.slogan}”
                 </p>
                 <Link
-                  href="/bat-dau"
+                  href="/"
                   className="btn-secondary mt-6 gap-2 bg-white/70 dark:bg-white/10"
                 >
                   Xem nhân cách của bạn

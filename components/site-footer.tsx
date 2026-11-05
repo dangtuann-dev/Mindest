@@ -27,7 +27,7 @@ export function SiteFooter() {
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-ink-soft dark:text-cream-200/70">
               <li>
-                <Link className="transition hover:text-moss-700 dark:hover:text-moss-300" href="/#cach-hoat-dong">
+                <Link className="transition hover:text-moss-700 dark:hover:text-moss-300" href="/trang-chu/#cach-hoat-dong">
                   Cách hoạt động
                 </Link>
               </li>
@@ -37,7 +37,7 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link className="transition hover:text-moss-700 dark:hover:text-moss-300" href="/bat-dau">
+                <Link className="transition hover:text-moss-700 dark:hover:text-moss-300" href="/">
                   Làm bài
                 </Link>
               </li>

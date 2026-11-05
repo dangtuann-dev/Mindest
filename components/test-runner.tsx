@@ -51,7 +51,7 @@ export function TestRunner() {
     const loaded = loadRun();
     if (!loaded) {
       setReady(true);
-      router.replace("/bat-dau");
+      router.replace("/");
       return;
     }
     setRun(loaded);
@@ -215,7 +215,7 @@ export function TestRunner() {
           <p className="mt-3 text-sm text-ink-soft dark:text-cream-200/65">
             Bài làm chỉ tồn tại trong tab này. Bạn bắt đầu lại từ phần chuẩn bị nhé.
           </p>
-          <Link href="/bat-dau" className="btn-primary mt-6">
+          <Link href="/" className="btn-primary mt-6">
             Bắt đầu
             <ArrowRight size={17} />
           </Link>
@@ -237,7 +237,7 @@ export function TestRunner() {
               Chỉ trên tab này
             </span>
             <ClearDataButton compact className="hidden sm:inline-flex" />
-            <Link href="/" className="btn-ghost">
+            <Link href="/trang-chu" className="btn-ghost">
               Thoát
             </Link>
           </div>

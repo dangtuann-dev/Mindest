@@ -66,7 +66,7 @@ export function StartFlow() {
   return (
     <main id="noi-dung" className="container-page pb-16 pt-10 sm:pt-14">
       <Link
-        href="/"
+        href="/trang-chu"
         className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-faint transition hover:text-ink dark:text-cream-200/55 dark:hover:text-cream-100"
       >
         <ArrowLeft size={16} />

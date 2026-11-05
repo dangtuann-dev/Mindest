@@ -29,7 +29,7 @@ export default function NhanCachIndexPage() {
               để cơ thể, cảm xúc và suy nghĩ của bạn lên tiếng. Đọc để hiểu mình hơn, hoặc
               để hiểu một người bạn đang cần được ở bên.
             </p>
-            <Link href="/bat-dau" className="btn-primary mt-7 gap-2">
+            <Link href="/" className="btn-primary mt-7 gap-2">
               Làm bài để tìm nhân cách của bạn
               <ArrowRight size={18} />
             </Link>

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Bắt đầu",
   description:
     "Đọc lưu ý, chọn nhóm tuổi và xác nhận trước khi bắt đầu hành trình hiểu mình cùng Mindest.",
+  alternates: { canonical: "/" },
 };
 
 export default function StartPage() {

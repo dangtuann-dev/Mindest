@@ -408,7 +408,7 @@ function ResultArticle({ result }: { result: StoredResult }) {
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start">
           <ReportDownloadButton result={result} />
           <MindsetCardButton code={result.code} />
-          <Link href="/bat-dau" className="btn-secondary gap-2">
+          <Link href="/" className="btn-secondary gap-2">
             Làm lại
           </Link>
           <ClearDataButton className="sm:ml-auto" />
@@ -470,7 +470,7 @@ export function ResultView() {
             Kết quả chỉ được giữ trong tab bạn làm bài và tự xóa khi đóng tab. Bạn có thể
             làm lại bất cứ lúc nào — bài làm gồm 100 câu, khoảng 12–15 phút.
           </p>
-          <Link href="/bat-dau" className="btn-primary mt-7 gap-2">
+          <Link href="/" className="btn-primary mt-7 gap-2">
             Bắt đầu làm bài
             <ArrowRight size={18} />
           </Link>

@@ -13,13 +13,13 @@ export function SiteHeader() {
         >
           <Link
             className="rounded-full px-3.5 py-2 transition hover:bg-ink/5 hover:text-ink dark:hover:bg-white/10 dark:hover:text-cream-50"
-            href="/#cach-hoat-dong"
+            href="/trang-chu/#cach-hoat-dong"
           >
             Cách hoạt động
           </Link>
           <Link
             className="rounded-full px-3.5 py-2 transition hover:bg-ink/5 hover:text-ink dark:hover:bg-white/10 dark:hover:text-cream-50"
-            href="/#nhan-cach"
+            href="/trang-chu/#nhan-cach"
           >
             16 nhân cách
           </Link>
@@ -31,7 +31,7 @@ export function SiteHeader() {
           </Link>
         </nav>
         <Link
-          href="/bat-dau"
+          href="/"
           className="btn-primary min-h-[2.75rem] gap-1.5 px-5 text-[0.9rem]"
         >
           Bắt đầu
