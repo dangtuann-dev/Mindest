@@ -277,7 +277,7 @@ export function TestRunner() {
           <h1 className="mt-4 text-[1.7rem] leading-tight sm:text-[2.1rem]">
             {isLast
               ? "Thêm vài câu để mình hiểu bạn hơn."
-              : "Điều này đúng với bạn ở mức nào?"}
+              : "Điều này giống với bạn ở mức nào?"}
           </h1>
 
           <div className="mt-4 flex items-start gap-3 rounded-2xl border border-moss-200/70 bg-moss-50/70 px-4 py-3.5 text-[0.85rem] leading-relaxed text-ink-soft dark:border-moss-700/30 dark:bg-moss-900/20 dark:text-cream-200/70">
@@ -461,38 +461,46 @@ function QuestionCard({
         </div>
       </div>
 
-      <div className="mt-5">
-        <div className="mx-auto flex max-w-[24rem] items-center justify-between text-[0.66rem] font-medium text-ink-faint dark:text-cream-200/45">
-          <span>Không đúng</span>
-          <span>Rất đúng</span>
-        </div>
-        <div className="mx-auto mt-2 grid max-w-[24rem] grid-cols-5 gap-2">
-          {SCALE_OPTIONS.map((option) => {
-            const checked = value === option.value;
-            return (
-              <label
-                key={option.value}
+      <div className="mt-6 grid grid-cols-5 gap-1 sm:gap-2.5">
+        {SCALE_OPTIONS.map((option) => {
+          const checked = value === option.value;
+          return (
+            <label
+              key={option.value}
+              className="group flex cursor-pointer flex-col items-center gap-2 rounded-2xl px-0.5 pb-1 pt-1.5 text-center"
+            >
+              <input
+                type="radio"
+                name={`question-${question.id}`}
+                value={option.value}
+                checked={checked}
+                onChange={() => onAnswer(question.id, option.value)}
+                className="peer sr-only"
+              />
+              <span
+                aria-hidden="true"
                 className={cn(
-                  "flex h-12 cursor-pointer items-center justify-center rounded-xl border text-[0.95rem] font-semibold tabular-nums transition duration-150 sm:h-14",
+                  "grid h-10 w-10 place-items-center rounded-full border-2 transition duration-150 peer-focus-visible:ring-2 peer-focus-visible:ring-moss-500/60 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-white sm:h-12 sm:w-12 dark:peer-focus-visible:ring-moss-300/60 dark:peer-focus-visible:ring-offset-night-800",
                   checked
                     ? "border-moss-700 bg-moss-700 text-cream-50 shadow-[0_8px_18px_-10px_rgba(54,80,51,0.9)] dark:border-moss-300 dark:bg-moss-300 dark:text-night-900"
-                    : "border-ink/10 bg-white text-ink-soft hover:border-moss-400 hover:text-moss-800 dark:border-white/10 dark:bg-white/[0.04] dark:text-cream-200/70 dark:hover:border-moss-500 dark:hover:text-moss-100",
+                    : "border-ink/20 bg-white group-hover:border-moss-400 group-hover:bg-moss-50/60 dark:border-white/25 dark:bg-white/[0.04] dark:group-hover:border-moss-500 dark:group-hover:bg-moss-900/20",
                 )}
               >
-                <input
-                  type="radio"
-                  name={`question-${question.id}`}
-                  value={option.value}
-                  checked={checked}
-                  onChange={() => onAnswer(question.id, option.value)}
-                  aria-label={`${option.value} – ${option.label}`}
-                  className="sr-only"
-                />
-                <span aria-hidden="true">{option.value}</span>
-              </label>
-            );
-          })}
-        </div>
+                {checked ? <Check size={20} strokeWidth={2.4} /> : null}
+              </span>
+              <span
+                className={cn(
+                  "text-[0.6rem] font-semibold uppercase leading-[1.3] tracking-[0.05em] transition sm:text-[0.68rem]",
+                  checked
+                    ? "text-moss-800 dark:text-moss-200"
+                    : "text-ink-soft group-hover:text-ink dark:text-cream-200/60 dark:group-hover:text-cream-100",
+                )}
+              >
+                {option.label}
+              </span>
+            </label>
+          );
+        })}
       </div>
 
       <div className="mt-3 flex items-center justify-between gap-2">

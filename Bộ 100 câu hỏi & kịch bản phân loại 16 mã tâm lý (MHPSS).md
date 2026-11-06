@@ -14,7 +14,7 @@
 | 4 – Trạng thái tinh thần | V (Chủ động, cầu tiến) | A (Bất lực, trầm uất) | Câu 73–96 |
 | An toàn | – | – | Câu 97–100 |
 
-**Thang trả lời (Likert 5 mức):** 1 = Hoàn toàn không đúng · 2 = Ít khi đúng · 3 = Đôi khi đúng · 4 = Thường đúng · 5 = Rất đúng với mình.
+**Thang trả lời (Likert 5 mức):** 1 = Rất không giống mình · 2 = Không giống mình · 3 = Trung lập · 4 = Giống mình · 5 = Rất giống mình. Trên giao diện, thang hiển thị từ trái sang phải: Rất giống mình → Rất không giống mình.
 
 **Bản rút gọn 20 câu:** các câu đánh dấu ★ (mỗi trục 4 câu, 2 câu mỗi cực) + 4 câu an toàn. Cùng một thuật toán chấm điểm.
 

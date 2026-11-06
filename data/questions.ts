@@ -270,14 +270,14 @@ export const QUESTION_BY_ID: ReadonlyMap<number, Question> = new Map(
 );
 
 export const PROMPT_SCALE =
-  "Trong khoảng 2–4 tuần gần đây, điều này đúng với mình ở mức nào?";
+  "Trong khoảng 2–4 tuần gần đây, điều này giống với mình ở mức nào?";
 
 export const SCALE_OPTIONS = [
-  { value: 1, label: "Hoàn toàn không đúng" },
-  { value: 2, label: "Ít khi đúng" },
-  { value: 3, label: "Đôi khi đúng" },
-  { value: 4, label: "Thường đúng" },
-  { value: 5, label: "Rất đúng với mình" },
+  { value: 5, label: "Rất giống mình" },
+  { value: 4, label: "Giống mình" },
+  { value: 3, label: "Trung lập" },
+  { value: 2, label: "Không giống mình" },
+  { value: 1, label: "Rất không giống mình" },
 ] as const;
 
 export type ScaleValue = 1 | 2 | 3 | 4 | 5;

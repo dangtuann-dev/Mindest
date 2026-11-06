@@ -8,7 +8,7 @@ Mindest là web app tiếng Việt giúp người trẻ 12–22 tuổi nhận di
 
 - **Riêng tư từ kiến trúc:** không có backend, không database, không đăng nhập, không API route. Câu trả lời chỉ nằm trong `sessionStorage` của tab đang mở và tự mất khi đóng tab.
 - **Không theo dõi:** không analytics, không cookie, không script bên thứ ba. Font được tự lưu trữ, avatar và PDF được tạo ngay trên trình duyệt.
-- **Mobile-first:** thang trả lời dạng nút lớn, bàn phím và trình đọc màn hình dùng được, tương phản theo WCAG AA, hỗ trợ dark mode theo hệ thống.
+- **Mobile-first:** thang trả lời 5 mức dạng vòng tròn có dấu tích, bàn phím và trình đọc màn hình dùng được, tương phản theo WCAG AA, hỗ trợ dark mode theo hệ thống.
 - **Nội dung có kiểm soát:** script `lint:content` chặn các từ ngữ mang tính kết luận y khoa trong toàn bộ nội dung hiển thị.
 
 ## Công nghệ
