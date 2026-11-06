@@ -203,6 +203,13 @@ function ResultArticle({ result }: { result: StoredResult }) {
         </div>
       </section>
 
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-ink/[0.06] bg-white px-5 py-4 shadow-soft dark:border-white/[0.08] dark:!bg-night-700">
+        <p className="min-w-0 text-[0.82rem] text-ink-soft dark:text-cream-200/70">
+          Lưu kết quả này về máy để đọc lại bất cứ lúc nào.
+        </p>
+        <ReportDownloadButton result={result} />
+      </div>
+
       <section aria-labelledby="bon-truc">
         <SectionHeading
           eyebrow="Bức chân dung"

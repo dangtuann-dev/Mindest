@@ -17,8 +17,8 @@ Font.registerHyphenationCallback((word) => [word]);
 const ink = "#2A2520";
 const soft = "#5B5249";
 const faint = "#8A7E71";
-const cream = "#FAF4E9";
-const paper = "#FFFDF8";
+const cream = "#FFFFFF";
+const paper = "#FFFFFF";
 
 const styles = StyleSheet.create({
   page: {
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     left: 42,
     right: 42,
     borderTopWidth: 0.6,
-    borderTopColor: "#DED3C2",
+    borderTopColor: "#DDDAD3",
     paddingTop: 7,
   },
   footerText: { fontSize: 6.4, lineHeight: 1.5, color: faint },
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     backgroundColor: paper,
     borderWidth: 0.8,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
     padding: 16,
     flexDirection: "row",
     gap: 16,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     height: 108,
     borderRadius: 16,
     overflow: "hidden",
-    backgroundColor: "#EFE3D1",
+    backgroundColor: "#EFEEEA",
   },
   avatar: { width: 108, height: 108 },
   heroBody: { flex: 1 },
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 10,
     borderWidth: 0.7,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
     backgroundColor: paper,
     padding: 9,
   },
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     marginTop: 6,
     height: 4,
     borderRadius: 999,
-    backgroundColor: "#E9DFD0",
+    backgroundColor: "#E9E7E2",
     overflow: "hidden",
   },
   axisFill: { height: 4, borderRadius: 999 },
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: paper,
     borderWidth: 0.7,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
     padding: 11,
   },
   colTitle: { fontSize: 9, fontWeight: "bold", marginBottom: 6 },
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: paper,
     borderWidth: 0.7,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
     padding: 9,
   },
   tipTitle: { fontSize: 8.8, fontWeight: "bold", marginBottom: 3 },
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: paper,
     borderWidth: 0.7,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
     padding: 11,
   },
   habitText: { fontSize: 8.4, lineHeight: 1.5, color: soft },
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: paper,
     borderWidth: 0.8,
-    borderColor: "#E7DBC8",
+    borderColor: "#E8E5DF",
   },
   supportTitle: { fontSize: 10.5, fontWeight: "bold", marginBottom: 5 },
   supportText: { fontSize: 8.4, lineHeight: 1.55, color: soft },
