@@ -166,6 +166,7 @@ export function TestRunner() {
       const result: StoredResult = {
         savedAt: new Date().toISOString(),
         ageGroup: next.ageGroup,
+        gender: next.gender,
         code: outcome.result.code,
         axes: outcome.result.axes,
         careIndex: outcome.result.careIndex,

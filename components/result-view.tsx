@@ -163,6 +163,7 @@ function ResultArticle({ result }: { result: StoredResult }) {
         <div className="relative grid gap-6 md:grid-cols-[250px_minmax(0,1fr)] md:items-center">
           <Avatar
             code={archetype.code}
+            gender={result.gender}
             className="mx-auto aspect-square w-full max-w-[260px] rounded-[1.9rem] border-[5px] border-white/70 shadow-soft dark:border-white/10"
           />
           <div className="min-w-0">
@@ -414,7 +415,7 @@ function ResultArticle({ result }: { result: StoredResult }) {
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start">
           <ReportDownloadButton result={result} />
-          <MindsetCardButton code={result.code} />
+          <MindsetCardButton code={result.code} gender={result.gender} />
           <Link href="/" className="btn-secondary gap-2">
             Làm lại
           </Link>

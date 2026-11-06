@@ -15,7 +15,10 @@ export function ReportDownloadButton({ result }: { result: StoredResult }) {
     setStatus("working");
     try {
       const archetype = ARCHETYPE_BY_CODE[result.code];
-      const avatarDataUrl = await svgToPngDataUrl(getAvatarSvg(result.code), 512);
+      const avatarDataUrl = await svgToPngDataUrl(
+        getAvatarSvg(result.code, result.gender),
+        512,
+      );
       const [{ pdf }, { ReportDocument }] = await Promise.all([
         import("@react-pdf/renderer"),
         import("@/lib/report-document"),

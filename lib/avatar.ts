@@ -1,14 +1,17 @@
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
-import { AVATARS } from "@/data/avatars";
+import { AVATARS, AVATAR_GENDER_OVERRIDES } from "@/data/avatars";
 import type { ArchetypeCode } from "@/data/archetypes";
+import type { Gender } from "@/lib/session";
 
-export function getAvatarSvg(code: ArchetypeCode): string {
+export function getAvatarSvg(code: ArchetypeCode, gender: Gender = "khac"): string {
   const config = AVATARS[code];
+  const overrides = gender === "khac" ? {} : AVATAR_GENDER_OVERRIDES[gender][code];
   return createAvatar(lorelei, {
     seed: config.seed,
     backgroundColor: [config.backgroundColor],
     ...config.options,
+    ...overrides,
     beardProbability: 0,
   } as unknown as Parameters<typeof createAvatar>[1]).toString();
 }

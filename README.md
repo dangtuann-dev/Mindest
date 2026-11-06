@@ -1,6 +1,6 @@
 # Mindest – thấu hiểu tâm trí
 
-Mindest là web app tiếng Việt giúp người trẻ 12–22 tuổi nhận diện **phong cách ứng phó với áp lực** qua 100 câu hỏi, rồi nhận một trong **16 nhân cách** với avatar riêng, mô tả chi tiết, lời khuyên sơ cứu cảm xúc, thói quen 7 ngày và báo cáo PDF.
+Mindest là web app tiếng Việt giúp người trẻ 12–22 tuổi nhận diện **phong cách ứng phó với áp lực** qua 100 câu hỏi, rồi nhận một trong **16 nhân cách** với avatar riêng, mô tả chi tiết, lời khuyên sơ cứu cảm xúc, thói quen 7 ngày và báo cáo PDF. Trước khi làm bài, người dùng chọn giới tính (Nam/Nữ/Khác) để avatar ở trang kết quả phù hợp: 16 avatar nam, 16 avatar nữ, cùng bộ gốc trung tính cho lựa chọn “Khác”.
 
 > Đây là công cụ tự khám phá và sàng lọc sơ bộ, không phải công cụ y khoa. Trang web không đưa ra kết luận về sức khỏe tinh thần và không thay thế ý kiến của người có chuyên môn.
 
@@ -88,7 +88,7 @@ data/
   questions.ts              100 câu hỏi
   axes.ts                   4 trục và nhãn hiển thị
   archetypes.ts             16 nhân cách, nội dung chi tiết
-  avatars.ts                Cấu hình seed/màu avatar từng nhân cách
+  avatars.ts                Cấu hình seed/màu avatar và biến thể nam/nữ
 lib/
   scoring.ts                Thuật toán chấm điểm thuần
   session.ts                sessionStorage, định dạng ngày

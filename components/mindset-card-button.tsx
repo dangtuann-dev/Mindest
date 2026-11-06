@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ARCHETYPE_BY_CODE } from "@/data/archetypes";
 import { getAvatarSvg, svgToPngDataUrl } from "@/lib/avatar";
+import type { Gender } from "@/lib/session";
 import { ImageIcon } from "./icons";
 
 type Status = "idle" | "working" | "error";
@@ -57,7 +58,13 @@ function wrapLines(
   return lines;
 }
 
-export function MindsetCardButton({ code }: { code: keyof typeof ARCHETYPE_BY_CODE }) {
+export function MindsetCardButton({
+  code,
+  gender,
+}: {
+  code: keyof typeof ARCHETYPE_BY_CODE;
+  gender?: Gender;
+}) {
   const [status, setStatus] = useState<Status>("idle");
 
   async function download() {
@@ -65,7 +72,7 @@ export function MindsetCardButton({ code }: { code: keyof typeof ARCHETYPE_BY_CO
     try {
       const archetype = ARCHETYPE_BY_CODE[code];
       await document.fonts.ready;
-      const image = await loadImage(await svgToPngDataUrl(getAvatarSvg(code), 720));
+      const image = await loadImage(await svgToPngDataUrl(getAvatarSvg(code, gender), 720));
       const family = getComputedStyle(document.body).fontFamily || "sans-serif";
 
       const canvas = document.createElement("canvas");

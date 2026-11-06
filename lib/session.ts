@@ -8,6 +8,14 @@ import type { ArchetypeCode } from "@/data/archetypes";
 
 export type AgeGroup = "12-15" | "16-18" | "19-22";
 
+export type Gender = "nam" | "nu" | "khac";
+
+export const GENDERS: ReadonlyArray<{ value: Gender; label: string }> = [
+  { value: "nam", label: "Nam" },
+  { value: "nu", label: "Nữ" },
+  { value: "khac", label: "Khác" },
+];
+
 export const AGE_GROUPS: ReadonlyArray<{ value: AgeGroup; label: string; note: string }> =
   [
     {
@@ -24,6 +32,7 @@ const RESULT_KEY = "mindest:result:v2";
 
 export interface RunState {
   ageGroup: AgeGroup;
+  gender: Gender;
   guardianConsent: boolean;
   seed: number;
   order: number[];
@@ -36,6 +45,7 @@ export interface RunState {
 export interface StoredResult {
   savedAt: string;
   ageGroup: AgeGroup;
+  gender: Gender;
   code: ArchetypeCode;
   axes: AxisScore[];
   careIndex: number;
@@ -59,6 +69,10 @@ export function loadRun(): RunState | null {
     if (parsed.answers && typeof parsed.answers !== "object") return null;
     return {
       ageGroup: parsed.ageGroup ?? "16-18",
+      gender:
+        parsed.gender === "nam" || parsed.gender === "nu" || parsed.gender === "khac"
+          ? parsed.gender
+          : "khac",
       guardianConsent: Boolean(parsed.guardianConsent),
       seed: typeof parsed.seed === "number" ? parsed.seed : 0,
       order: parsed.order.filter((id): id is number => typeof id === "number"),
@@ -89,7 +103,13 @@ export function loadResult(): StoredResult | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<StoredResult>;
     if (!parsed.code || !Array.isArray(parsed.axes) || !parsed.savedAt) return null;
-    return parsed as StoredResult;
+    return {
+      ...(parsed as StoredResult),
+      gender:
+        parsed.gender === "nam" || parsed.gender === "nu" || parsed.gender === "khac"
+          ? parsed.gender
+          : "khac",
+    };
   } catch {
     return null;
   }

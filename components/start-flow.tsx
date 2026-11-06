@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   AGE_GROUPS,
+  GENDERS,
   clearResult,
   loadRun,
   saveRun,
   type AgeGroup,
+  type Gender,
   type RunState,
 } from "@/lib/session";
 import { buildOrder, randomSeed } from "@/lib/random";
@@ -18,6 +20,7 @@ import { ArrowLeft, ArrowRight, Check, Clock, Lock, Phone, Shield } from "./icon
 export function StartFlow() {
   const router = useRouter();
   const [ageGroup, setAgeGroup] = useState<AgeGroup | null>(null);
+  const [gender, setGender] = useState<Gender | null>(null);
   const [guardianConsent, setGuardianConsent] = useState(false);
   const [consent, setConsent] = useState(false);
   const [existing, setExisting] = useState<RunState | null>(null);
@@ -28,23 +31,26 @@ export function StartFlow() {
   }, []);
 
   const needsGuardian = ageGroup === "12-15";
-  const canStart = Boolean(ageGroup) && consent && (!needsGuardian || guardianConsent);
+  const canStart =
+    Boolean(ageGroup) && Boolean(gender) && consent && (!needsGuardian || guardianConsent);
 
   const missing = useMemo(() => {
     if (!ageGroup) return "chọn nhóm tuổi";
+    if (!gender) return "chọn giới tính";
     if (needsGuardian && !guardianConsent) return "xác nhận của phụ huynh/người giám hộ";
     if (!consent) return "tick đồng ý tham gia";
     return null;
-  }, [ageGroup, needsGuardian, guardianConsent, consent]);
+  }, [ageGroup, gender, needsGuardian, guardianConsent, consent]);
 
   function begin() {
-    if (!canStart || !ageGroup) {
+    if (!canStart || !ageGroup || !gender) {
       setError("Bạn kiểm tra lại một chút thông tin bên trên nhé.");
       return;
     }
     const seed = randomSeed();
     const run: RunState = {
       ageGroup,
+      gender,
       guardianConsent: needsGuardian ? guardianConsent : false,
       seed,
       order: buildOrder(seed),
@@ -208,6 +214,51 @@ export function StartFlow() {
                   </span>
                 </label>
               ) : null}
+            </fieldset>
+
+            <fieldset>
+              <legend className="text-[1rem] font-semibold">Giới tính của bạn</legend>
+              <p className="mt-1 text-[0.8rem] text-ink-faint dark:text-cream-200/50">
+                Mindest dùng lựa chọn này để chọn avatar phù hợp ở trang kết quả. Không ảnh
+                hưởng đến điểm hay nhân cách.
+              </p>
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                {GENDERS.map((option) => {
+                  const checked = gender === option.value;
+                  return (
+                    <label
+                      key={option.value}
+                      className={cn(
+                        "relative cursor-pointer rounded-2xl border p-4 text-center transition",
+                        checked
+                          ? "border-moss-500 bg-moss-50 shadow-[0_0_0_1px_rgba(88,126,81,0.4)] dark:border-moss-400 dark:bg-moss-900/30"
+                          : "border-ink/10 bg-white/50 hover:border-moss-300 hover:bg-moss-50/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-moss-600",
+                      )}
+                    >
+                      <input
+                        type="radio"
+                        name="gender"
+                        value={option.value}
+                        checked={checked}
+                        onChange={() => setGender(option.value)}
+                        className="sr-only"
+                      />
+                      <span className="text-[0.95rem] font-semibold">{option.label}</span>
+                      <span
+                        className={cn(
+                          "mx-auto mt-2 grid h-5 w-5 place-items-center rounded-full border transition",
+                          checked
+                            ? "border-moss-600 bg-moss-600 text-cream-50 dark:border-moss-300 dark:bg-moss-300 dark:text-night-900"
+                            : "border-ink/20 dark:border-white/25",
+                        )}
+                        aria-hidden="true"
+                      >
+                        {checked ? <Check size={13} /> : null}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
             </fieldset>
 
             <div className="rounded-2xl border border-moss-200/70 bg-moss-50/50 p-4 sm:p-5 dark:border-moss-700/30 dark:bg-moss-900/20">

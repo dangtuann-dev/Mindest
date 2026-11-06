@@ -315,6 +315,58 @@ export const AVATARS: Record<ArchetypeCode, AvatarConfig> = {
   },
 };
 
+export type AvatarGender = "nam" | "nu";
+
+/**
+ * 32 biến thể giới tính: 16 bộ nam và 16 bộ nữ, mỗi bộ giữ nguyên gương mặt,
+ * màu da và biểu cảm của nhân cách gốc, chỉ đổi kiểu tóc và phụ kiện.
+ */
+export const AVATAR_GENDER_OVERRIDES: Record<
+  AvatarGender,
+  Record<ArchetypeCode, Partial<AvatarOptions>>
+> = {
+  nam: {
+    EFDV: { hair: ["variant11"] },
+    EFDA: { hair: ["variant05"] },
+    EFRV: { hair: ["variant03"] },
+    EFRA: { hair: ["variant12"] },
+    ESDV: { hair: ["variant08"] },
+    ESDA: { hair: ["variant27"], earringsProbability: 0 },
+    ESRV: { hair: ["variant09"] },
+    ESRA: { hair: ["variant46"] },
+    IFDV: { hair: ["variant07"] },
+    IFDA: { hair: ["variant38"], earringsProbability: 0 },
+    IFRV: { hair: ["variant43"], hairAccessoriesProbability: 0 },
+    IFRA: { hair: ["variant01"] },
+    ISDV: { hair: ["variant20"] },
+    ISDA: { hair: ["variant22"] },
+    ISRV: { hair: ["variant04"] },
+    ISRA: { hair: ["variant28"] },
+  },
+  nu: {
+    EFDV: { hair: ["variant13"] },
+    EFDA: { hair: ["variant29"] },
+    EFRV: { hair: ["variant45"] },
+    EFRA: { hair: ["variant15"] },
+    ESDV: { hair: ["variant42"] },
+    ESDA: { hair: ["variant23"], earrings: ["variant02"], earringsProbability: 70 },
+    ESRV: { hair: ["variant30"] },
+    ESRA: { hair: ["variant19"] },
+    IFDV: { hair: ["variant40"] },
+    IFDA: { hair: ["variant48"], earrings: ["variant01"], earringsProbability: 60 },
+    IFRV: {
+      hair: ["variant18"],
+      hairAccessories: ["flowers"],
+      hairAccessoriesProbability: 100,
+    },
+    IFRA: { hair: ["variant32"] },
+    ISDV: { hair: ["variant33"] },
+    ISDA: { hair: ["variant24"] },
+    ISRV: { hair: ["variant36"] },
+    ISRA: { hair: ["variant35"] },
+  },
+};
+
 export const AVATAR_LICENSE = {
   style: "Lorelei",
   creator: "Lisa Wischofsky",

@@ -15,7 +15,7 @@ const sections = [
   {
     title: "Mindest lưu gì?",
     body: [
-      "Trong lúc bạn làm bài, câu trả lời được giữ tạm trong sessionStorage của trình duyệt — một vùng nhớ chỉ thuộc về tab bạn đang mở. Khi bạn hoàn thành, Mindest lưu kết quả tổng hợp (mã nhân cách, vị trí bốn trục, mức cần chăm sóc, thời gian làm bài) vào sessionStorage để trang kết quả đọc lại.",
+      "Trong lúc bạn làm bài, câu trả lời được giữ tạm trong sessionStorage của trình duyệt — một vùng nhớ chỉ thuộc về tab bạn đang mở. Khi bạn hoàn thành, Mindest lưu kết quả tổng hợp (mã nhân cách, vị trí bốn trục, mức cần chăm sóc, thời gian làm bài) cùng nhóm tuổi và giới tính bạn đã chọn — giới tính chỉ dùng để chọn avatar ở trang kết quả — vào sessionStorage để trang kết quả đọc lại.",
       "Mindest không gửi câu trả lời hay kết quả đến máy chủ nào. Không có cơ sở dữ liệu, không có tài khoản, không có bảng theo dõi. Đóng tab là toàn bộ dữ liệu của phiên đó biến mất. Bạn cũng có thể bấm “Xóa dữ liệu của mình” ở bất kỳ trang nào để xóa ngay lập tức.",
     ],
   },
