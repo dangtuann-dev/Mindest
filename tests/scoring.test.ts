@@ -7,6 +7,7 @@ import {
   careLevelFromIndex,
   clarityLabel,
   evaluateSafety,
+  gaugePosition,
   score,
   type Answers,
 } from "@/lib/scoring";
@@ -222,5 +223,28 @@ describe("nhãn hiển thị", () => {
     expect(clarityLabel("clear")).toBe("Rõ");
     expect(clarityLabel("moderate")).toBe("Vừa");
     expect(clarityLabel("balanced")).toBe("Cân bằng");
+  });
+});
+
+describe("vị trí kim đo trục", () => {
+  it("nghiêng cực 1 (m1 cao) thì kim về phía trái", () => {
+    expect(gaugePosition(5, 1)).toBeCloseTo(16.67, 1);
+  });
+
+  it("nghiêng cực 2 (m2 cao) thì kim về phía phải", () => {
+    expect(gaugePosition(1, 5)).toBeCloseTo(83.33, 1);
+  });
+
+  it("hai cực bằng nhau thì kim ở giữa", () => {
+    expect(gaugePosition(3, 3)).toBe(50);
+  });
+
+  it("tổng bằng 0 thì kim ở giữa", () => {
+    expect(gaugePosition(0, 0)).toBe(50);
+  });
+
+  it("kim nằm trong khoảng 8–92", () => {
+    expect(gaugePosition(1, 1)).toBeGreaterThanOrEqual(8);
+    expect(gaugePosition(1, 1)).toBeLessThanOrEqual(92);
   });
 });

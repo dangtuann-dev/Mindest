@@ -1,11 +1,10 @@
 import { AXIS_BY_KEY } from "@/data/axes";
-import { clarityHint, clarityLabel, type AxisScore } from "@/lib/scoring";
+import { clarityHint, clarityLabel, gaugePosition, type AxisScore } from "@/lib/scoring";
 import { cn } from "@/lib/cn";
 
 export function AxisGauge({ axis, color }: { axis: AxisScore; color: string }) {
   const meta = AXIS_BY_KEY[axis.key];
-  const total = axis.m1 + axis.m2;
-  const position = total > 0 ? Math.min(92, Math.max(8, (axis.m1 / total) * 100)) : 50;
+  const position = gaugePosition(axis.m1, axis.m2);
   const leftActive = axis.pole === meta.pole1;
 
   return (

@@ -210,6 +210,12 @@ export function assessAttention(
   return { fast, streak, shouldNudge: fast || streak };
 }
 
+export function gaugePosition(m1: number, m2: number): number {
+  const total = m1 + m2;
+  if (total <= 0) return 50;
+  return Math.min(92, Math.max(8, (m2 / total) * 100));
+}
+
 export function clarityLabel(clarity: Clarity): string {
   switch (clarity) {
     case "clear":
